@@ -1,0 +1,18 @@
+﻿<wpfwiz:WizardRegularPageBase  x:Class="Microsoft.Demo.IncidentSLAManagement.SettingsForm.Settings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Microsoft.Demo.IncidentSLAManagement.SettingsForm"                             
+    xmlns:wpfwiz="clr-namespace:Microsoft.EnterpriseManagement.UI.WpfWizardFramework;assembly=Microsoft.EnterpriseManagement.UI.WpfWizardFramework">
+    <Grid>
+        <ScrollViewer Margin="0,50,0,50" Name="scrollViewer" CanContentScroll="True" VerticalScrollBarVisibility="Auto">
+            <StackPanel Name="stackPanel" Orientation="Vertical">
+                <Label Height="25" Padding="0" Margin="0,0,0,0" Name="IncidentSLABreachWarningThresholdLabel" Content="SLA warning threshold (minutes):"/>
+                <TextBox Height="25" Margin="0,-8,0,10" Name="IncidentSLABreachWarningThresholdTextBlock">
+                    <TextBox.Text>
+                        <Binding Path="WarningThreshold" Mode="TwoWay" FallbackValue=""/>
+                    </TextBox.Text>
+                </TextBox>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</wpfwiz:WizardRegularPageBase>

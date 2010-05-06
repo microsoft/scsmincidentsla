@@ -1,0 +1,3 @@
+<SequentialWorkflowActivity x:Class="WorkflowAuthoring.ProcessIncidents" x:Name="ProcessIncidents" xmlns:ns0="clr-namespace:Microsoft.Demo.IncidentSLAManagement;Assembly=Microsoft.Demo.IncidentSLAManagement.Activities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<ns0:GetSLABreachingIncidents x:Name="getSLABreachingIncidents1" ServerName="{x:Null}" WarningThreshold="00:00:00" Password="{x:Null}" PropertyToBind="{x:Null}" UserName="{x:Null}" />
+</SequentialWorkflowActivity>

@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Demo.IncidentSLAManagement.Activities", "Microsoft.Demo.IncidentSLAManagement.Activities\Microsoft.Demo.IncidentSLAManagement.Activities.csproj", "{CFEDCC51-5BA5-4832-9213-1FEE7AB08BFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Other", "Other\Other.csproj", "{06CFD47B-6EF5-4751-AD13-8153FA2CB4D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Demo.IncidentSLAManagement.SettingsForm", "Microsoft.Demo.IncidentSLAManagement.SettingsForm\Microsoft.Demo.IncidentSLAManagement.SettingsForm.csproj", "{C9316DBD-01CC-40CA-8275-D3F5F124BD41}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFEDCC51-5BA5-4832-9213-1FEE7AB08BFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFEDCC51-5BA5-4832-9213-1FEE7AB08BFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFEDCC51-5BA5-4832-9213-1FEE7AB08BFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFEDCC51-5BA5-4832-9213-1FEE7AB08BFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06CFD47B-6EF5-4751-AD13-8153FA2CB4D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06CFD47B-6EF5-4751-AD13-8153FA2CB4D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9316DBD-01CC-40CA-8275-D3F5F124BD41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9316DBD-01CC-40CA-8275-D3F5F124BD41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9316DBD-01CC-40CA-8275-D3F5F124BD41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9316DBD-01CC-40CA-8275-D3F5F124BD41}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

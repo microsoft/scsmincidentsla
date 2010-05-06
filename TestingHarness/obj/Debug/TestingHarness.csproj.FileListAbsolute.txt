@@ -1,0 +1,14 @@
+C:\Users\pasun\Documents\Visual Studio 2008\Projects\Blog\Litware.ServiceManager.Activities\TestingHarness\bin\Debug\TestingHarness.exe
+C:\Users\pasun\Documents\Visual Studio 2008\Projects\Blog\Litware.ServiceManager.Activities\TestingHarness\bin\Debug\TestingHarness.pdb
+C:\Users\pasun\Documents\Visual Studio 2008\Projects\Blog\Litware.ServiceManager.Activities\TestingHarness\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\pasun\Documents\Visual Studio 2008\Projects\Blog\Litware.ServiceManager.Activities\TestingHarness\obj\Debug\TestingHarness.exe
+C:\Users\pasun\Documents\Visual Studio 2008\Projects\Blog\Litware.ServiceManager.Activities\TestingHarness\obj\Debug\TestingHarness.pdb
+C:\Users\pasun\Documents\Visual Studio 2008\Projects\Blog\Litware.ServiceManager.Activities\TestingHarness\bin\Debug\Litware.ServiceManager.Activities.dll
+C:\Users\pasun\Documents\Visual Studio 2008\Projects\Blog\Litware.ServiceManager.Activities\TestingHarness\bin\Debug\Litware.ServiceManager.Activities.pdb
+C:\Software\IncidentSLA\Source\Microsoft.Demo.IncidentSLAManagement\TestingHarness\bin\Debug\TestingHarness.exe
+C:\Software\IncidentSLA\Source\Microsoft.Demo.IncidentSLAManagement\TestingHarness\bin\Debug\TestingHarness.pdb
+C:\Software\IncidentSLA\Source\Microsoft.Demo.IncidentSLAManagement\TestingHarness\bin\Debug\Litware.ServiceManager.Activities.dll
+C:\Software\IncidentSLA\Source\Microsoft.Demo.IncidentSLAManagement\TestingHarness\bin\Debug\Litware.ServiceManager.Activities.pdb
+C:\Software\IncidentSLA\Source\Microsoft.Demo.IncidentSLAManagement\TestingHarness\obj\Debug\ResolveAssemblyReference.cache
+C:\Software\IncidentSLA\Source\Microsoft.Demo.IncidentSLAManagement\TestingHarness\obj\Debug\TestingHarness.exe
+C:\Software\IncidentSLA\Source\Microsoft.Demo.IncidentSLAManagement\TestingHarness\obj\Debug\TestingHarness.pdb

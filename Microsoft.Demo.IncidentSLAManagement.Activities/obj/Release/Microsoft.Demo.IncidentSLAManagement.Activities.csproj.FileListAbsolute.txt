@@ -1,0 +1,5 @@
+C:\Software\IncidentSLA\Source\Microsoft.Demo.IncidentSLAManagement\Microsoft.Demo.IncidentSLAManagement.Activities\bin\Release\Microsoft.Demo.IncidentSLAManagement.Activities.dll
+C:\Software\IncidentSLA\Source\Microsoft.Demo.IncidentSLAManagement\Microsoft.Demo.IncidentSLAManagement.Activities\bin\Release\Microsoft.ServiceManager.WorkflowAuthoring.ActivityLibrary.dll
+C:\Software\IncidentSLA\Source\Microsoft.Demo.IncidentSLAManagement\Microsoft.Demo.IncidentSLAManagement.Activities\bin\Release\en\Microsoft.ServiceManager.WorkflowAuthoring.ActivityLibrary.resources.dll
+C:\Software\IncidentSLA\Source\Microsoft.Demo.IncidentSLAManagement\Microsoft.Demo.IncidentSLAManagement.Activities\obj\Release\ResolveAssemblyReference.cache
+C:\Software\IncidentSLA\Source\Microsoft.Demo.IncidentSLAManagement\Microsoft.Demo.IncidentSLAManagement.Activities\obj\Release\Microsoft.Demo.IncidentSLAManagement.Activities.dll
