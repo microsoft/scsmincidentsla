@@ -190,10 +190,10 @@ namespace Microsoft.Demo.IncidentSLAManagement
 
             ManagementPackTypeProjection incidentTypeProjection = emg.EntityTypes.GetTypeProjection("System.WorkItem.Incident.ProjectionType", mpIncident);
 
-            const String INCIDENT_SLA_SETTINGS_OBJECT_GUID =                    "9146FEC8-AE3B-2DE0-6A66-6BCAF4DC68BE";
-            const String INCIDENT_SLA_BREACH_WARNING_THRESHOLD_PROPERTY_GUID =  "31FA82A5-6528-ADFC-049B-FB9CD8281CC8";
-            const String INCIDENT_SLA_STATUS_WARNING_ENUM_GUID =                "17C744AA-B2B3-9F37-99B9-A34226051EBD";
-            const String INCIDENT_SLA_STATUS_BREACHED_ENUM_GUID =               "2119D9C6-256F-2542-DC43-E818B9B30E53";
+            const String INCIDENT_SLA_SETTINGS_OBJECT_GUID =                    "4AD8DC00-2333-93D6-5EB4-D372A42DEA7B";
+            const String INCIDENT_SLA_BREACH_WARNING_THRESHOLD_PROPERTY_GUID =  "BE79DAC0-A04E-8A36-708A-F1497B1F9608";
+            const String INCIDENT_SLA_STATUS_WARNING_ENUM_GUID =                "CFD5CB2F-F5E8-0CA8-8699-E1C2C19477FA";
+            const String INCIDENT_SLA_STATUS_BREACHED_ENUM_GUID =               "1DECB743-AF62-B72F-74DB-92124A05F676";
                         
             //Get the Object using the GUID from above - since this is a singleton object we can get it by GUID
             EnterpriseManagementObject emoIncidentSLASettings = emg.EntityObjects.GetObject<EnterpriseManagementObject>(new Guid(INCIDENT_SLA_SETTINGS_OBJECT_GUID), ObjectQueryOptions.Default);

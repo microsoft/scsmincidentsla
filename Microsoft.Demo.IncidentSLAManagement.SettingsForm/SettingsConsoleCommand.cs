@@ -38,7 +38,7 @@ namespace Microsoft.Demo.IncidentSLAManagement.SettingsForm
               Select BaseManagedEntityID, FullName from BaseManagedEntity where FullName like '%<enter your class ID here>%'
               where the GUID you want is returned in the BaseManagedEntityID column in the result set
             */
-            String strSingletonBaseManagedObjectID = "9146FEC8-AE3B-2DE0-6A66-6BCAF4DC68BE";
+            String strSingletonBaseManagedObjectID = "4AD8DC00-2333-93D6-5EB4-D372A42DEA7B";
 
             //Get the server name to connect to and connect to the server
             String strServerName = Registry.GetValue("HKEY_CURRENT_USER\\Software\\Microsoft\\System Center\\2010\\Service Manager\\Console\\User Settings", "SDKServiceMachine", "localhost").ToString();
@@ -102,7 +102,7 @@ namespace Microsoft.Demo.IncidentSLAManagement.SettingsForm
         internal IncidentSLASettingsWizardData(EnterpriseManagementObject emoIncidentSLASettings, EnterpriseManagementGroup emg)
         {
             //Get the IncidentSLAManagement MP so you can get the Admin Setting class
-            ManagementPack mpIncidentSLAManagement = emg.GetManagementPack("Microsoft.Demo.IncidentSLAManagement", null, new Version("1.0.0.0"));
+            ManagementPack mpIncidentSLAManagement = emg.GetManagementPack("Microsoft.Demo.IncidentSLAManagement.Library", "9396306c2be7fcc4", new Version("1.0.0.0"));
             ManagementPackClass classIncidentSLAManagementSettings = mpIncidentSLAManagement.GetClass("Microsoft.Demo.IncidentSLAManagement.Settings.ClassType");
       
             Int32 intResult;
@@ -125,7 +125,7 @@ namespace Microsoft.Demo.IncidentSLAManagement.SettingsForm
             EnterpriseManagementGroup emg = new EnterpriseManagementGroup(strServerName);
 
             //Get the AdminSettings MP so you can get the Admin Setting class
-            ManagementPack mpIncidentSLAManagement = emg.GetManagementPack("Microsoft.Demo.IncidentSLAManagement", null, new Version("1.0.0.0"));
+            ManagementPack mpIncidentSLAManagement = emg.GetManagementPack("Microsoft.Demo.IncidentSLAManagement.Library", "9396306c2be7fcc4", new Version("1.0.0.0"));
             ManagementPackClass classIncidentSLAManagementSettings = mpIncidentSLAManagement.GetClass("Microsoft.Demo.IncidentSLAManagement.Settings.ClassType");
 
             //Get the object using the object ID

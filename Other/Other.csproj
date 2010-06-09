@@ -39,7 +39,8 @@
   </Target>
   -->
   <ItemGroup>
-    <Content Include="Microsoft.Demo.IncidentSLAManagement.xml" />
+    <Content Include="Microsoft.Demo.IncidentSLAManagement.Configuration.xml" />
+    <Content Include="Microsoft.Demo.IncidentSLAManagement.Library.xml" />
     <Content Include="SLABreachCriteria.xml" />
   </ItemGroup>
   <ItemGroup>

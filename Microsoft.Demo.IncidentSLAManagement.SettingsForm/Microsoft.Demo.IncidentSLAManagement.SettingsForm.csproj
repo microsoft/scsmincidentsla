@@ -35,11 +35,7 @@
   <ItemGroup>
     <Reference Include="Microsoft.EnterpriseManagement.Core, Version=7.0.5000.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Program Files\Microsoft System Center\Service Manager 2010\SDK Binaries\Microsoft.EnterpriseManagement.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.EnterpriseManagement.Packaging, Version=7.0.5000.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Program Files\Microsoft System Center\Service Manager 2010\SDK Binaries\Microsoft.EnterpriseManagement.Packaging.dll</HintPath>
+      <HintPath>\\10.194.224.205\c$\Program Files\Microsoft System Center\Service Manager 2010\SDK Binaries\Microsoft.EnterpriseManagement.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.EnterpriseManagement.UI.Foundation, Version=7.0.1000.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
