@@ -1,0 +1,455 @@
+﻿<ManagementPack ContentReadable="true" SchemaVersion="1.1" OriginalSchemaVersion="1.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <Manifest>
+    <Identity>
+      <ID>Microsoft.Demo.IncidentSLAManagement.Configuration</ID>
+      <Version>1.0.0.0</Version>
+    </Identity>
+    <Name>Incident SLA Management Configuration</Name>
+    <References>
+      <Reference Alias="SLALibrary">
+        <ID>Microsoft.Demo.IncidentSLAManagement.Library</ID>
+        <Version>1.0.0.0</Version>
+        <PublicKeyToken>9396306c2be7fcc4</PublicKeyToken>
+      </Reference>
+      <Reference Alias="Console">
+        <ID>Microsoft.EnterpriseManagement.ServiceManager.UI.Console</ID>
+        <Version>7.0.5826.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="Notifications">
+        <ID>System.Notifications.Library</ID>
+        <Version>7.0.5826.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="WorkItem">
+        <ID>System.WorkItem.Library</ID>
+        <Version>7.0.5826.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="Authoring">
+        <ID>Microsoft.EnterpriseManagement.ServiceManager.UI.Authoring</ID>
+        <Version>7.0.5826.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="IncidentManagement">
+        <ID>ServiceManager.IncidentManagement.Library</ID>
+        <Version>7.0.5826.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="System">
+        <ID>System.Library</ID>
+        <Version>7.0.5826.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="Incident">
+        <ID>System.WorkItem.Incident.Library</ID>
+        <Version>7.0.5826.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="Administration">
+        <ID>Microsoft.EnterpriseManagement.ServiceManager.UI.Administration</ID>
+        <Version>7.0.5826.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+    </References>
+  </Manifest>
+  <Categories>
+    <Category ID="SCSMMPCategory" Value="Console!Microsoft.EnterpriseManagement.ServiceManager.ManagementPack">
+      <ManagementPackName>Microsoft.Demo.IncidentSLAManagement.Configuration</ManagementPackName>
+      <ManagementPackVersion>1.0.0.0</ManagementPackVersion>
+    </Category>
+    <Category ID="Category.f0fc314f943347f1ad7cfaaa89d93e7e" Target="SLAViews.Folder" Value="Console!Microsoft.EnterpriseManagement.ServiceManager.UI.Console.FolderTasks" />
+    <Category ID="Category.226f379874a048b5940ac045d343e97e" Target="SLAWarning.View" Value="Console!Microsoft.EnterpriseManagement.ServiceManager.UI.Console.ViewTasks" />
+    <Category ID="Category.501bbca82dff4101a04a2e10eecdd8ee" Target="SLAWarning.View" Value="Authoring!Microsoft.EnterpriseManagement.ServiceManager.UI.Authoring.CreateTypeCategory" />
+    <Category ID="Category.2e440577921f4e7bbf3fbcfefe22af50" Target="SLABreached.View" Value="Console!Microsoft.EnterpriseManagement.ServiceManager.UI.Console.ViewTasks" />
+    <Category ID="Category.616eb8b8204843b28b2626d5c6e387cf" Target="SLABreached.View" Value="Authoring!Microsoft.EnterpriseManagement.ServiceManager.UI.Authoring.CreateTypeCategory" />
+    <Category ID="ServiceManager.Console.NotificationManagement.NotificationTemplates.Enumeration2ee769df_33b0_4119_ada4_c58b860e1597.Category" Target="Template_51edac7aad8547508b991495db637475" Value="Administration!ServiceManager.Console.NotificationManagement.NotificationTemplates.Enumeration" />
+    <Category ID="ServiceManager.Console.NotificationManagement.NotificationTemplates.Enumeration2236691f_7d49_44bf_87d2_c25cc3eaf690.Category" Target="Template_35fea3725484469db77317db3b0af27a" Value="Administration!ServiceManager.Console.NotificationManagement.NotificationTemplates.Enumeration" />
+  </Categories>
+  <Templates>
+    <ObjectTemplate ID="Template_51edac7aad8547508b991495db637475" TypeID="Notifications!System.Notification.Template.SMTP">
+      <Property Path="$Context/Property[Type='Notifications!System.Notification.Template.SMTP']/Subject$">&lt;1033&gt;Incident SLA Status has changed to Warning - ID: $Context/Property[Type='WorkItem!System.WorkItem']/Id$&lt;/1033&gt;</Property>
+      <Property Path="$Context/Property[Type='Notifications!System.Notification.Template.SMTP']/Priority$">2</Property>
+      <Property Path="$Context/Property[Type='Notifications!System.Notification.Template.SMTP']/IsBodyHtml$">False</Property>
+      <Property Path="$Context/Property[Type='Notifications!System.Notification.Template']/Content$">
+        &lt;1033&gt;&amp;lt;
+        This incident has changed SLA Status to Warning.
+
+        ID: $Context/Property[Type='WorkItem!System.WorkItem']/Id$
+        Title: $Context/Property[Type='WorkItem!System.WorkItem']/Title$
+        Urgency: $Context/Property[Type='WorkItem!System.WorkItem.TroubleTicket']/Urgency$
+        Impact: $Context/Property[Type='WorkItem!System.WorkItem.TroubleTicket']/Impact$
+        $Context/Property[Type='WorkItem!System.WorkItem.TroubleTicket']/Priority$
+        Target Resolution Time: $Context/Property[Type='Incident!System.WorkItem.Incident']/TargetResolutionTime$
+        Assigned To: $Context/Path[Relationship='WorkItem!System.WorkItemAssignedToUser' TypeConstraint='System!System.User']$?$DisplayName$?&lt;/1033&gt;
+      </Property>
+      <Property Path="$Context/Property[Type='Notifications!System.Notification.Template']/Encoding$">utf-8</Property>
+      <Property Path="$Context/Property[Type='Notifications!System.Notification.Template']/SeedClass$">System.WorkItem.Incident$a604b942-4c7b-2fb2-28dc-61dc6f465c68</Property>
+      <Property Path="$Context/Property[Type='Notifications!System.Notification.Template']/Protocol$">SMTP</Property>
+    </ObjectTemplate>
+    <ObjectTemplate ID="Template_35fea3725484469db77317db3b0af27a" TypeID="Notifications!System.Notification.Template.SMTP">
+      <Property Path="$Context/Property[Type='Notifications!System.Notification.Template.SMTP']/Subject$">&lt;1033&gt;Incident SLA Status has changed to Breached - ID: $Context/Property[Type='WorkItem!System.WorkItem']/Id$&lt;/1033&gt;</Property>
+      <Property Path="$Context/Property[Type='Notifications!System.Notification.Template.SMTP']/Priority$">2</Property>
+      <Property Path="$Context/Property[Type='Notifications!System.Notification.Template.SMTP']/IsBodyHtml$">False</Property>
+      <Property Path="$Context/Property[Type='Notifications!System.Notification.Template']/Content$">
+        &lt;1033&gt;
+        This incident has changed SLA Status to Breached.
+
+        ID: $Context/Property[Type='WorkItem!System.WorkItem']/Id$
+        Title: $Context/Property[Type='WorkItem!System.WorkItem']/Title$
+        Urgency: $Context/Property[Type='WorkItem!System.WorkItem.TroubleTicket']/Urgency$
+        Impact: $Context/Property[Type='WorkItem!System.WorkItem.TroubleTicket']/Impact$
+        $Context/Property[Type='WorkItem!System.WorkItem.TroubleTicket']/Priority$
+        Target Resolution Time: $Context/Property[Type='Incident!System.WorkItem.Incident']/TargetResolutionTime$
+        Assigned To: $Context/Path[Relationship='WorkItem!System.WorkItemAssignedToUser' TypeConstraint='System!System.User']$?$DisplayName$?&lt;/1033&gt;
+      </Property>
+      <Property Path="$Context/Property[Type='Notifications!System.Notification.Template']/Encoding$">utf-8</Property>
+      <Property Path="$Context/Property[Type='Notifications!System.Notification.Template']/SeedClass$">System.WorkItem.Incident$a604b942-4c7b-2fb2-28dc-61dc6f465c68</Property>
+      <Property Path="$Context/Property[Type='Notifications!System.Notification.Template']/Protocol$">SMTP</Property>
+    </ObjectTemplate>
+  </Templates>
+  <Presentation>
+    <Views>
+      <View ID="SLAWarning.View" Accessibility="Public" Enabled="true" Target="Incident!System.WorkItem.Incident" TypeID="Console!GridViewType" Visible="true">
+        <Category>NotUsed</Category>
+        <Data>
+          <Adapters>
+            <Adapter AdapterName="dataportal:EnterpriseManagementObjectAdapter">
+              <AdapterAssembly>Microsoft.EnterpriseManagement.UI.SdkDataAccess</AdapterAssembly>
+              <AdapterType>Microsoft.EnterpriseManagement.UI.SdkDataAccess.DataAdapters.EnterpriseManagementObjectAdapter</AdapterType>
+            </Adapter>
+            <Adapter AdapterName="viewframework://Adapters/AdvancedList">
+              <AdapterAssembly>Microsoft.EnterpriseManagement.UI.ViewFramework</AdapterAssembly>
+              <AdapterType>Microsoft.EnterpriseManagement.UI.ViewFramework.AdvancedListSupportAdapter</AdapterType>
+            </Adapter>
+          </Adapters>
+          <ItemsSource>
+            <AdvancedListSupportClass DataTypeName="" AdapterName="viewframework://Adapters/AdvancedList" FullUpdateAdapter="dataportal:EnterpriseManagementObjectAdapter" DataSource="mom:ManagementGroup" FullUpdateFrequency="1" Streaming="true" IsRecurring="true" RecurrenceFrequency="{x:Static s:Int32.MaxValue}" xmlns="clr-namespace:Microsoft.EnterpriseManagement.UI.ViewFramework;assembly=Microsoft.EnterpriseManagement.UI.ViewFramework" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib">
+              <AdvancedListSupportClass.Parameters>
+                <QueryParameter Parameter="ManagementPackClassId" Value="$MPElement[Name='Incident!System.WorkItem.Incident']$" />
+              </AdvancedListSupportClass.Parameters>
+            </AdvancedListSupportClass>
+          </ItemsSource>
+          <Criteria>
+            <QueryCriteria Adapter="omsdk://Adapters/Criteria" xmlns="http://tempuri.org/Criteria.xsd">
+              <Criteria>
+                <FreeformCriteria>
+                  <Freeform>
+                    <Criteria xmlns="http://Microsoft.EnterpriseManagement.Core.Criteria/">
+                      <Expression>
+                        <And>
+                          <Expression>
+                            <SimpleExpression>
+                              <ValueExpressionLeft>
+                                <Property>$Context/Property[Type='SLALibrary!Microsoft.Demo.IncidentSLAManagement.IncidentExtension.ClassType']/SLAStatus$</Property>
+                              </ValueExpressionLeft>
+                              <Operator>Equal</Operator>
+                              <ValueExpressionRight>
+                                <Value>{17c744aa-b2b3-9f37-99b9-a34226051ebd}</Value>
+                              </ValueExpressionRight>
+                            </SimpleExpression>
+                          </Expression>
+                          <Expression>
+                            <Or>
+                              <Expression>
+                                <SimpleExpression>
+                                  <ValueExpressionLeft>
+                                    <Property>$Context/Property[Type='Incident!System.WorkItem.Incident']/Status$</Property>
+                                  </ValueExpressionLeft>
+                                  <Operator>NotEqual</Operator>
+                                  <ValueExpressionRight>
+                                    <Value>{5e2d3932-ca6d-1515-7310-6f58584df73e}</Value>
+                                  </ValueExpressionRight>
+                                </SimpleExpression>
+                              </Expression>
+                              <Expression>
+                                <SimpleExpression>
+                                  <ValueExpressionLeft>
+                                    <Property>$Context/Property[Type='Incident!System.WorkItem.Incident']/Status$</Property>
+                                  </ValueExpressionLeft>
+                                  <Operator>Equal</Operator>
+                                  <ValueExpressionRight>
+                                    <Value>{b6679968-e84e-96fa-1fec-8cd4ab39c3de}</Value>
+                                  </ValueExpressionRight>
+                                </SimpleExpression>
+                              </Expression>
+                            </Or>
+                          </Expression>
+                        </And>
+                      </Expression>
+                    </Criteria>
+                  </Freeform>
+                </FreeformCriteria>
+              </Criteria>
+            </QueryCriteria>
+          </Criteria>
+        </Data>
+        <Presentation>
+          <Columns>
+            <mux:ColumnCollection xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mux="http://schemas.microsoft.com/SystemCenter/Common/UI/Views/GridView" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:data="clr-namespace:Microsoft.EnterpriseManagement.UI.SdkDataAccess.Common;assembly=Microsoft.EnterpriseManagement.UI.SdkDataAccess">
+              <mux:Column Name="Id" DisplayMemberBinding="{Binding Path=Id}" Width="100" DisplayName="Id.110b61f61e32403e9d0e205aa5865b6f" Property="Id" DataType="s:String" />
+              <mux:Column Name="Title" DisplayMemberBinding="{Binding Path=Title}" Width="300" DisplayName="Title.1acdff4110b3402d93c37bc362a7d222" Property="Title" DataType="s:String" />
+              <mux:Column Name="Priority" DisplayMemberBinding="{Binding Path=Priority}" Width="100" DisplayName="Priority.a4e317d5d864418799516d72658ace41" Property="Priority" DataType="s:Int32" />
+              <mux:Column Name="Urgency.DisplayName" DisplayMemberBinding="{Binding Path=Urgency.DisplayName}" Width="100" DisplayName="Urgency.1e535e02dc634056b939324d6c3cfe94" Property="Urgency.DisplayName" DataType="s:String" />
+              <mux:Column Name="Impact.DisplayName" DisplayMemberBinding="{Binding Path=Impact.DisplayName}" Width="100" DisplayName="Impact.d4cc649dad404639968a14130d7bbab9" Property="Impact.DisplayName" DataType="s:String" />
+              <mux:Column Name="TargetResolutionTime" DisplayMemberBinding="{Binding Path=TargetResolutionTime}" Width="100" DisplayName="TargetResolutionTime.6299d53a12124c57b3c38feb0ee3c504" Property="TargetResolutionTime" DataType="s:DateTime" />
+              <mux:Column Name="Escalated" DisplayMemberBinding="{Binding Path=Escalated}" Width="100" DisplayName="Escalated.a7523058e2cc48628d1c2df7d1aa50c3" Property="Escalated" DataType="s:Boolean" />
+              <mux:Column Name="TierQueue.DisplayName" DisplayMemberBinding="{Binding Path=TierQueue.DisplayName}" Width="100" DisplayName="TierQueue.4934cb818ed342d283e16724cc6de188" Property="TierQueue.DisplayName" DataType="s:String" />
+              <mux:Column Name="Source.DisplayName" DisplayMemberBinding="{Binding Path=Source.DisplayName}" Width="100" DisplayName="Source.7ecd3b6bc37f4af59ebb1ddf3236bd1c" Property="Source.DisplayName" DataType="s:String" />
+            </mux:ColumnCollection>
+          </Columns>
+          <ViewStrings>
+            <ViewString ID="Escalated.a7523058e2cc48628d1c2df7d1aa50c3">$MPElement[Name="Escalated.a7523058e2cc48628d1c2df7d1aa50c3"]$</ViewString>
+            <ViewString ID="Id.110b61f61e32403e9d0e205aa5865b6f">$MPElement[Name="Id.110b61f61e32403e9d0e205aa5865b6f"]$</ViewString>
+            <ViewString ID="Impact.d4cc649dad404639968a14130d7bbab9">$MPElement[Name="Impact.d4cc649dad404639968a14130d7bbab9"]$</ViewString>
+            <ViewString ID="Priority.a4e317d5d864418799516d72658ace41">$MPElement[Name="Priority.a4e317d5d864418799516d72658ace41"]$</ViewString>
+            <ViewString ID="Source.7ecd3b6bc37f4af59ebb1ddf3236bd1c">$MPElement[Name="Source.7ecd3b6bc37f4af59ebb1ddf3236bd1c"]$</ViewString>
+            <ViewString ID="TargetResolutionTime.6299d53a12124c57b3c38feb0ee3c504">$MPElement[Name="TargetResolutionTime.6299d53a12124c57b3c38feb0ee3c504"]$</ViewString>
+            <ViewString ID="TierQueue.4934cb818ed342d283e16724cc6de188">$MPElement[Name="TierQueue.4934cb818ed342d283e16724cc6de188"]$</ViewString>
+            <ViewString ID="Title.1acdff4110b3402d93c37bc362a7d222">$MPElement[Name="Title.1acdff4110b3402d93c37bc362a7d222"]$</ViewString>
+            <ViewString ID="Urgency.1e535e02dc634056b939324d6c3cfe94">$MPElement[Name="Urgency.1e535e02dc634056b939324d6c3cfe94"]$</ViewString>
+          </ViewStrings>
+        </Presentation>
+      </View>
+      <View ID="SLABreached.View" Accessibility="Public" Enabled="true" Target="Incident!System.WorkItem.Incident" TypeID="Console!GridViewType" Visible="true">
+        <Category>NotUsed</Category>
+        <Data>
+          <Adapters>
+            <Adapter AdapterName="dataportal:EnterpriseManagementObjectAdapter">
+              <AdapterAssembly>Microsoft.EnterpriseManagement.UI.SdkDataAccess</AdapterAssembly>
+              <AdapterType>Microsoft.EnterpriseManagement.UI.SdkDataAccess.DataAdapters.EnterpriseManagementObjectAdapter</AdapterType>
+            </Adapter>
+            <Adapter AdapterName="viewframework://Adapters/AdvancedList">
+              <AdapterAssembly>Microsoft.EnterpriseManagement.UI.ViewFramework</AdapterAssembly>
+              <AdapterType>Microsoft.EnterpriseManagement.UI.ViewFramework.AdvancedListSupportAdapter</AdapterType>
+            </Adapter>
+          </Adapters>
+          <ItemsSource>
+            <AdvancedListSupportClass DataTypeName="" AdapterName="viewframework://Adapters/AdvancedList" FullUpdateAdapter="dataportal:EnterpriseManagementObjectAdapter" DataSource="mom:ManagementGroup" FullUpdateFrequency="1" Streaming="true" IsRecurring="true" RecurrenceFrequency="{x:Static s:Int32.MaxValue}" xmlns="clr-namespace:Microsoft.EnterpriseManagement.UI.ViewFramework;assembly=Microsoft.EnterpriseManagement.UI.ViewFramework" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib">
+              <AdvancedListSupportClass.Parameters>
+                <QueryParameter Parameter="ManagementPackClassId" Value="$MPElement[Name='Incident!System.WorkItem.Incident']$" />
+              </AdvancedListSupportClass.Parameters>
+            </AdvancedListSupportClass>
+          </ItemsSource>
+          <Criteria>
+            <QueryCriteria Adapter="omsdk://Adapters/Criteria" xmlns="http://tempuri.org/Criteria.xsd">
+              <Criteria>
+                <FreeformCriteria>
+                  <Freeform>
+                    <Criteria xmlns="http://Microsoft.EnterpriseManagement.Core.Criteria/">
+                      <Expression>
+                        <And>
+                          <Expression>
+                            <SimpleExpression>
+                              <ValueExpressionLeft>
+                                <Property>$Context/Property[Type='SLALibrary!Microsoft.Demo.IncidentSLAManagement.IncidentExtension.ClassType']/SLAStatus$</Property>
+                              </ValueExpressionLeft>
+                              <Operator>Equal</Operator>
+                              <ValueExpressionRight>
+                                <Value>{2119d9c6-256f-2542-dc43-e818b9b30e53}</Value>
+                              </ValueExpressionRight>
+                            </SimpleExpression>
+                          </Expression>
+                          <Expression>
+                            <Or>
+                              <Expression>
+                                <SimpleExpression>
+                                  <ValueExpressionLeft>
+                                    <Property>$Context/Property[Type='Incident!System.WorkItem.Incident']/Status$</Property>
+                                  </ValueExpressionLeft>
+                                  <Operator>Equal</Operator>
+                                  <ValueExpressionRight>
+                                    <Value>{5e2d3932-ca6d-1515-7310-6f58584df73e}</Value>
+                                  </ValueExpressionRight>
+                                </SimpleExpression>
+                              </Expression>
+                              <Expression>
+                                <SimpleExpression>
+                                  <ValueExpressionLeft>
+                                    <Property>$Context/Property[Type='Incident!System.WorkItem.Incident']/Status$</Property>
+                                  </ValueExpressionLeft>
+                                  <Operator>Equal</Operator>
+                                  <ValueExpressionRight>
+                                    <Value>{b6679968-e84e-96fa-1fec-8cd4ab39c3de}</Value>
+                                  </ValueExpressionRight>
+                                </SimpleExpression>
+                              </Expression>
+                            </Or>
+                          </Expression>
+                        </And>
+                      </Expression>
+                    </Criteria>
+                  </Freeform>
+                </FreeformCriteria>
+              </Criteria>
+            </QueryCriteria>
+          </Criteria>
+        </Data>
+        <Presentation>
+          <Columns>
+            <mux:ColumnCollection xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mux="http://schemas.microsoft.com/SystemCenter/Common/UI/Views/GridView" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:data="clr-namespace:Microsoft.EnterpriseManagement.UI.SdkDataAccess.Common;assembly=Microsoft.EnterpriseManagement.UI.SdkDataAccess">
+              <mux:Column Name="Id" DisplayMemberBinding="{Binding Path=Id}" Width="100" DisplayName="Id.2b06019bc39a4dc899afc9970d1a6a87" Property="Id" DataType="s:String" />
+              <mux:Column Name="Title" DisplayMemberBinding="{Binding Path=Title}" Width="100" DisplayName="Title.21cd360d618d4859adbe0fc732a3d62c" Property="Title" DataType="s:String" />
+              <mux:Column Name="Priority" DisplayMemberBinding="{Binding Path=Priority}" Width="100" DisplayName="Priority.2c2286aa8e6a45faaa5840db4801b38c" Property="Priority" DataType="s:Int32" />
+              <mux:Column Name="Urgency.DisplayName" DisplayMemberBinding="{Binding Path=Urgency.DisplayName}" Width="100" DisplayName="Urgency.cf9ea1ae434041a983ff35593573c621" Property="Urgency.DisplayName" DataType="s:String" />
+              <mux:Column Name="TargetResolutionTime" DisplayMemberBinding="{Binding Path=TargetResolutionTime}" Width="100" DisplayName="TargetResolutionTime.6070040d949d41efaf2d848c6cdad79c" Property="TargetResolutionTime" DataType="s:DateTime" />
+              <mux:Column Name="Escalated" DisplayMemberBinding="{Binding Path=Escalated}" Width="100" DisplayName="Escalated.5165dda263dd44249fdce4802f852f09" Property="Escalated" DataType="s:Boolean" />
+              <mux:Column Name="TierQueue.DisplayName" DisplayMemberBinding="{Binding Path=TierQueue.DisplayName}" Width="100" DisplayName="TierQueue.c66881f8727f41dcadfe72b87a15f999" Property="TierQueue.DisplayName" DataType="s:String" />
+              <mux:Column Name="Source.DisplayName" DisplayMemberBinding="{Binding Path=Source.DisplayName}" Width="100" DisplayName="Source.904b7dd2375d4d9785ebd58f879c684d" Property="Source.DisplayName" DataType="s:String" />
+              <mux:Column Name="Classification.DisplayName" DisplayMemberBinding="{Binding Path=Classification.DisplayName}" Width="100" DisplayName="Classification.243eb9b9c639436083e2e6eefe4ba031" Property="Classification.DisplayName" DataType="s:String" />
+              <mux:Column Name="Status.DisplayName" DisplayMemberBinding="{Binding Path=Status.DisplayName}" Width="100" DisplayName="Status.9fee1cfacf84482a81fb84f04ad1b68d" Property="Status.DisplayName" DataType="s:String" />
+            </mux:ColumnCollection>
+          </Columns>
+          <ViewStrings>
+            <ViewString ID="Classification.243eb9b9c639436083e2e6eefe4ba031">$MPElement[Name="Classification.243eb9b9c639436083e2e6eefe4ba031"]$</ViewString>
+            <ViewString ID="Escalated.5165dda263dd44249fdce4802f852f09">$MPElement[Name="Escalated.5165dda263dd44249fdce4802f852f09"]$</ViewString>
+            <ViewString ID="Id.2b06019bc39a4dc899afc9970d1a6a87">$MPElement[Name="Id.2b06019bc39a4dc899afc9970d1a6a87"]$</ViewString>
+            <ViewString ID="Priority.2c2286aa8e6a45faaa5840db4801b38c">$MPElement[Name="Priority.2c2286aa8e6a45faaa5840db4801b38c"]$</ViewString>
+            <ViewString ID="Source.904b7dd2375d4d9785ebd58f879c684d">$MPElement[Name="Source.904b7dd2375d4d9785ebd58f879c684d"]$</ViewString>
+            <ViewString ID="Status.9fee1cfacf84482a81fb84f04ad1b68d">$MPElement[Name="Status.9fee1cfacf84482a81fb84f04ad1b68d"]$</ViewString>
+            <ViewString ID="TargetResolutionTime.6070040d949d41efaf2d848c6cdad79c">$MPElement[Name="TargetResolutionTime.6070040d949d41efaf2d848c6cdad79c"]$</ViewString>
+            <ViewString ID="TierQueue.c66881f8727f41dcadfe72b87a15f999">$MPElement[Name="TierQueue.c66881f8727f41dcadfe72b87a15f999"]$</ViewString>
+            <ViewString ID="Title.21cd360d618d4859adbe0fc732a3d62c">$MPElement[Name="Title.21cd360d618d4859adbe0fc732a3d62c"]$</ViewString>
+            <ViewString ID="Urgency.cf9ea1ae434041a983ff35593573c621">$MPElement[Name="Urgency.cf9ea1ae434041a983ff35593573c621"]$</ViewString>
+          </ViewStrings>
+        </Presentation>
+      </View>
+    </Views>
+    <Folders>
+      <Folder ID="SLAViews.Folder" Accessibility="Public" ParentFolder="IncidentManagement!ServiceManager.Console.IncidentManagement" />
+    </Folders>
+    <FolderItems>
+      <FolderItem ElementID="Console!Microsoft.EnterpriseManagement.ServiceManager.UI.Console.Task.CreateGridView" ID="SLAViews.Folder.FolderItem" Folder="SLAViews.Folder" />
+      <FolderItem ElementID="SLAWarning.View" ID="SLAWarning.FolderItem" Folder="SLAViews.Folder" />
+      <FolderItem ElementID="SLABreached.View" ID="SLABreached.FolderItem" Folder="SLAViews.Folder" />
+    </FolderItems>
+    <ImageReferences>
+      <ImageReference ElementID="SLAViews.Folder" ImageID="Console!Microsoft.EnterpriseManagement.ServiceManager.UI.Console.Image.Folder" />
+      <ImageReference ElementID="SLAWarning.View" ImageID="IncidentManagement!IncidentMgmt_IncidentClass_16" />
+      <ImageReference ElementID="SLABreached.View" ImageID="IncidentManagement!IncidentMgmt_IncidentClass_16" />
+    </ImageReferences>
+    <StringResources>
+      <StringResource ID="Escalated.a7523058e2cc48628d1c2df7d1aa50c3" />
+      <StringResource ID="Id.110b61f61e32403e9d0e205aa5865b6f" />
+      <StringResource ID="Impact.d4cc649dad404639968a14130d7bbab9" />
+      <StringResource ID="Priority.a4e317d5d864418799516d72658ace41" />
+      <StringResource ID="Source.7ecd3b6bc37f4af59ebb1ddf3236bd1c" />
+      <StringResource ID="TargetResolutionTime.6299d53a12124c57b3c38feb0ee3c504" />
+      <StringResource ID="TierQueue.4934cb818ed342d283e16724cc6de188" />
+      <StringResource ID="Title.1acdff4110b3402d93c37bc362a7d222" />
+      <StringResource ID="Urgency.1e535e02dc634056b939324d6c3cfe94" />
+      <StringResource ID="Classification.243eb9b9c639436083e2e6eefe4ba031" />
+      <StringResource ID="Escalated.5165dda263dd44249fdce4802f852f09" />
+      <StringResource ID="Id.2b06019bc39a4dc899afc9970d1a6a87" />
+      <StringResource ID="Priority.2c2286aa8e6a45faaa5840db4801b38c" />
+      <StringResource ID="Source.904b7dd2375d4d9785ebd58f879c684d" />
+      <StringResource ID="Status.9fee1cfacf84482a81fb84f04ad1b68d" />
+      <StringResource ID="TargetResolutionTime.6070040d949d41efaf2d848c6cdad79c" />
+      <StringResource ID="TierQueue.c66881f8727f41dcadfe72b87a15f999" />
+      <StringResource ID="Title.21cd360d618d4859adbe0fc732a3d62c" />
+      <StringResource ID="Urgency.cf9ea1ae434041a983ff35593573c621" />
+    </StringResources>
+  </Presentation>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="Microsoft.Demo.IncidentSLAManagement.Configuration">
+          <Name>Incident SLA Management Configuration</Name>
+        </DisplayString>
+        <DisplayString ElementID="SLAViews.Folder">
+          <Name>Service Level Agreement Tracking</Name>
+        </DisplayString>
+        <DisplayString ElementID="SLAWarning.View">
+          <Name>SLA Warning</Name>
+        </DisplayString>
+        <DisplayString ElementID="Escalated.a7523058e2cc48628d1c2df7d1aa50c3">
+          <Name>Escalated</Name>
+          <Description>Escalated</Description>
+        </DisplayString>
+        <DisplayString ElementID="Id.110b61f61e32403e9d0e205aa5865b6f">
+          <Name>ID</Name>
+          <Description>Work item ID</Description>
+        </DisplayString>
+        <DisplayString ElementID="Impact.d4cc649dad404639968a14130d7bbab9">
+          <Name>Impact</Name>
+          <Description>Impact</Description>
+        </DisplayString>
+        <DisplayString ElementID="Priority.a4e317d5d864418799516d72658ace41">
+          <Name>Priority</Name>
+          <Description>Priority</Description>
+        </DisplayString>
+        <DisplayString ElementID="Source.7ecd3b6bc37f4af59ebb1ddf3236bd1c">
+          <Name>Source</Name>
+          <Description>Source</Description>
+        </DisplayString>
+        <DisplayString ElementID="TargetResolutionTime.6299d53a12124c57b3c38feb0ee3c504">
+          <Name>Resolve By</Name>
+          <Description>Target resolution time</Description>
+        </DisplayString>
+        <DisplayString ElementID="TierQueue.4934cb818ed342d283e16724cc6de188">
+          <Name>Support Group</Name>
+          <Description>Support Group</Description>
+        </DisplayString>
+        <DisplayString ElementID="Title.1acdff4110b3402d93c37bc362a7d222">
+          <Name>Title</Name>
+          <Description>Title</Description>
+        </DisplayString>
+        <DisplayString ElementID="Urgency.1e535e02dc634056b939324d6c3cfe94">
+          <Name>Urgency</Name>
+          <Description>Urgency</Description>
+        </DisplayString>
+        <DisplayString ElementID="SLABreached.View">
+          <Name>SLA Breached</Name>
+        </DisplayString>
+        <DisplayString ElementID="Classification.243eb9b9c639436083e2e6eefe4ba031">
+          <Name>Classification Category</Name>
+          <Description>Incident Classification Category</Description>
+        </DisplayString>
+        <DisplayString ElementID="Escalated.5165dda263dd44249fdce4802f852f09">
+          <Name>Escalated</Name>
+          <Description>Escalated</Description>
+        </DisplayString>
+        <DisplayString ElementID="Id.2b06019bc39a4dc899afc9970d1a6a87">
+          <Name>ID</Name>
+          <Description>Work item ID</Description>
+        </DisplayString>
+        <DisplayString ElementID="Priority.2c2286aa8e6a45faaa5840db4801b38c">
+          <Name>Priority</Name>
+          <Description>Priority</Description>
+        </DisplayString>
+        <DisplayString ElementID="Source.904b7dd2375d4d9785ebd58f879c684d">
+          <Name>Source</Name>
+          <Description>Source</Description>
+        </DisplayString>
+        <DisplayString ElementID="Status.9fee1cfacf84482a81fb84f04ad1b68d">
+          <Name>Status</Name>
+          <Description>Status</Description>
+        </DisplayString>
+        <DisplayString ElementID="TargetResolutionTime.6070040d949d41efaf2d848c6cdad79c">
+          <Name>Resolve By</Name>
+          <Description>Target resolution time</Description>
+        </DisplayString>
+        <DisplayString ElementID="TierQueue.c66881f8727f41dcadfe72b87a15f999">
+          <Name>Support Group</Name>
+          <Description>Support Group</Description>
+        </DisplayString>
+        <DisplayString ElementID="Title.21cd360d618d4859adbe0fc732a3d62c">
+          <Name>Title</Name>
+          <Description>Title</Description>
+        </DisplayString>
+        <DisplayString ElementID="Urgency.cf9ea1ae434041a983ff35593573c621">
+          <Name>Urgency</Name>
+          <Description>Urgency</Description>
+        </DisplayString>
+        <DisplayString ElementID="Template_51edac7aad8547508b991495db637475">
+          <Name>Incident SLA Status - Warning</Name>
+          <Description>Use this template when incidents change their SLA Status to Warning</Description>
+        </DisplayString>
+        <DisplayString ElementID="Template_35fea3725484469db77317db3b0af27a">
+          <Name>Incident SLA Status - Breached</Name>
+          <Description>Use this template when the Incident SLA Status has changed to Breached.</Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPack>
