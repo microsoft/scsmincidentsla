@@ -243,7 +243,7 @@ namespace Microsoft.Demo.IncidentSLAManagement
                           </ValueExpressionLeft>
                           <Operator>Less</Operator>
                           <ValueExpressionRight>
-                            <Value>" + DateTime.Now.ToUniversalTime() + @"</Value>
+                            <Value>" + DateTime.Parse(DateTime.UtcNow.ToString()).ToString() + @"</Value>
                           </ValueExpressionRight>
                         </SimpleExpression>
                       </Expression>
@@ -316,7 +316,7 @@ namespace Microsoft.Demo.IncidentSLAManagement
                           </ValueExpressionLeft>
                           <Operator>Less</Operator>
                           <ValueExpressionRight>
-                            <Value>" + DateTime.Now.ToUniversalTime().Add(tsWarningThreshold) + @"</Value>
+                            <Value>" + DateTime.Parse(DateTime.UtcNow.Add(tsWarningThreshold).ToString()).ToString() + @"</Value>
                           </ValueExpressionRight>
                         </SimpleExpression>
                       </Expression>
@@ -357,7 +357,7 @@ namespace Microsoft.Demo.IncidentSLAManagement
                           </ValueExpressionLeft>
                           <Operator>Greater</Operator>
                           <ValueExpressionRight>
-                            <Value>" + DateTime.Now.ToUniversalTime().Add(tsWarningThreshold) + @"</Value>
+                            <Value>" + DateTime.Parse(DateTime.UtcNow.Add(tsWarningThreshold).ToString()).ToString() + @"</Value>
                           </ValueExpressionRight>
                         </SimpleExpression>
                       </Expression>
