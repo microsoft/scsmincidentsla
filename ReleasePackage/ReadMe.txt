@@ -16,7 +16,8 @@ http://www.microsoft.com/download/en/details.aspx?id=10639
 Microsoft.Demo.IncidentSLAManagement.Activities.dll
 ProcessIncidents.dll
 
-3) Copy the Microsoft.Demo.IncidentSLAManagement.SettingsForm.dll to the same directory on any computer running the Service Manager console where people will be configuring SLA management settings (i.e. admins only)
+3) Copy the Microsoft.Demo.IncidentSLAManagement.SettingsForm.dll to the C:\Program Files\Microsoft System Center\Service Manager 2010 directory on any computer running the Service Manager console where people will be configuring SLA management settings (i.e. admins only)
+
 4) Import the Microsoft.Demo.IncidentSLAManagement.Library management pack.
 5) Import the Microsoft.Demo.IncidentSLAManagement.Configuration.xml Management Pack.
 6) Configure the Warning threshold in Administration/Settings/Incident SLA Management Settings.  By default the threshold is zero minutes (no warning threshold).
@@ -27,7 +28,7 @@ ProcessIncidents.dll
 
 Upgrade Instructions
 ================================
-To upgrade from version 0.2 of the Incident SLA solution just do steps 1 and 2 above.
+To upgrade from version 0.2 of the Incident SLA solution just do steps 1, 2 and 3 above.
 
 
 Feedback
