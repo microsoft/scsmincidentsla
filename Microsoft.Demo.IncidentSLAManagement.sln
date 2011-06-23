@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Demo.IncidentSLAManagement.Activities", "Microsoft.Demo.IncidentSLAManagement.Activities\Microsoft.Demo.IncidentSLAManagement.Activities.csproj", "{CFEDCC51-5BA5-4832-9213-1FEE7AB08BFC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Other", "Other\Other.csproj", "{06CFD47B-6EF5-4751-AD13-8153FA2CB4D6}"
